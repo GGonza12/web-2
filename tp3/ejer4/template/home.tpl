@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="css/style.css">
 <h1>{$titulo}</h1>
 <table>
-	{foreach from=$pagos item=$pago}
+	
     <thead>
         <tr>
             <th>Deudor</th>
             <th>cuota</th>
             <th>cuota_capital</th>
             <th>fecha_pago</th>
-    
         </tr>
     </thead>
     <tbody>
+    {foreach from=$pagos item=$pago}
 		<tr>
 			<td>{$pago->deudor}</td>
 			<td>{$pago->cuota}</td>
