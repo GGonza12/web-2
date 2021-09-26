@@ -13,7 +13,10 @@ $pagos= [];
 foreach ($tareas as $tarea) {
 
     $pagos[]=$tarea;
+
 }
+var_dump($pagos);
+
 
 $smarty = new Smarty();
 $smarty->assign('titulo',"Lista de pagos");
@@ -21,5 +24,7 @@ $smarty->assign('titulo',"Lista de pagos");
 $smarty->assign('pagos', $pagos);
 
 $smarty->display('template/home.tpl');
+
+
 
 

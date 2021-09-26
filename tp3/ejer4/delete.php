@@ -5,7 +5,7 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     $db = new PDO('mysql:host=localhost;'.
     'dbname=registro_de_pagos;charset=utf8', 'root' ,'');
     
-    $sentencia = $db->prepare("DELETE FROM pagos WHERE $id = $id");
+    $sentencia = $db->prepare("DELETE FROM pagos WHERE $id = 5");
     $sentencia->execute();
     $id +=1;
     

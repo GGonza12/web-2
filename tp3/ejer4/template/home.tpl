@@ -19,5 +19,15 @@
             <td>{$pago->fecha_pago}</td>
         </tr>
     </tbody>
+ 
 {/foreach}
+   <form action="insert-form.php" method="get">
+
+        <input type="text" placeholder="Deudor" name="deudor">
+        <input type="number" placeholder="cuota" name="cuota">
+        <input type="number" placeholder="cuota_capital" name="capital">
+        <input type="text" placeholder="fecha_pago" name="fecha">
+        <input type="submit" value="Enviar">
+
+</form>
 </table>
