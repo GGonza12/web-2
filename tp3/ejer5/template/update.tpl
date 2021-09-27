@@ -8,5 +8,6 @@
         <input hidden type="number" placeholder="{$id}" name="id" value="{$id}">
         <br>
         <input type="submit" value="Modificar">
+        <a href="http://localhost/web2/tp3/ejer5/interfaz.php">Home</a>
         
 </form>
