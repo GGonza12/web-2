@@ -1,4 +1,5 @@
 <?php
+
 $deudor = $_GET['deudor'];
 $cuota= $_GET['cuota'];
 $capital= $_GET['capital'];
@@ -12,6 +13,8 @@ $sentencia->execute();
 $tareas = $sentencia->fetchAll(PDO::FETCH_OBJ);
 $id=0;
 $chek =0;
+
+
 foreach ($tareas as $tarea) {
     $id+=1;
     

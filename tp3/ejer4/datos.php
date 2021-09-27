@@ -15,6 +15,7 @@ foreach ($tareas as $tarea) {
     $pagos[]=$tarea;
 
 }
+
 var_dump($pagos);
 
 

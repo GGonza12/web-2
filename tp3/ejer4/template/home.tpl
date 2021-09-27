@@ -28,6 +28,6 @@
         <input type="number" placeholder="cuota_capital" name="capital">
         <input type="text" placeholder="fecha_pago" name="fecha">
         <input type="submit" value="Enviar">
-
+        
 </form>
 </table>
