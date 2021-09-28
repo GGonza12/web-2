@@ -1,4 +1,7 @@
 <?php
+function Showhome(){
+
+
 require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
 //if (isset($_GET['nombre']) && isset($_GET['profesor'])){
 // echo "a";
@@ -31,6 +34,7 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
 
     
 //}
+}
 
 
 

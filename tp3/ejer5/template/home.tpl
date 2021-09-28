@@ -1,12 +1,12 @@
 <h1>{$titulo}</h1>
-<form action="agregar.php" method="get">
+<form action="agregar" method="post">
 
         <input type="text" placeholder="Nombre" name="nombre">
         <input type="text" placeholder="Profesor" name="profesor">
         <input type="submit" value="Agregar">
         
 </form>
-<form action="filtro.php" method="get">
+<form action="filtro" method="post">
 
         <input type="text" placeholder="Ingrese materia que quiere buscar" name="materia">
         <input type="submit" value="Buscar">
@@ -27,8 +27,9 @@
 			<td>{$materia->id}</td>
 			<td>{$materia->nombre}</td>
             <td>{$materia->profesor}</td>
-            <td><a href="updateview.php?id={$materia->id}">modificar</a></td>
-            <td><a href="eliminar.php?id={$materia->id}">eliminar</a></td>
+            <td><a href="updateview/{$materia->id}/{$materia->nombre}/{$materia->profesor}">modificar</a></td>
+            <td><a href="eliminar/{$materia->id}">eliminar</a></td>
+            
         </tr>
     </tbody>
  

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-27 02:07:34
+/* Smarty version 3.1.39, created on 2021-09-29 01:04:19
   from 'C:\xampp\htdocs\web2\tp3\ejer5\template\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61510b46b32a38_05414140',
+  'unifunc' => 'content_61539f7385e611_09941768',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cfe2cd923b61ca62752fbad2ee2970a7cbcec7c2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\tp3\\ejer5\\template\\home.tpl',
-      1 => 1632700952,
+      1 => 1632870249,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61510b46b32a38_05414140 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61539f7385e611_09941768 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
-<form action="agregar.php" method="get">
+<form action="agregar" method="post">
 
         <input type="text" placeholder="Nombre" name="nombre">
         <input type="text" placeholder="Profesor" name="profesor">
         <input type="submit" value="Agregar">
         
 </form>
-<form action="filtro.php" method="get">
+<form action="filtro" method="post">
 
         <input type="text" placeholder="Ingrese materia que quiere buscar" name="materia">
         <input type="submit" value="Buscar">
@@ -59,10 +59,13 @@ $_smarty_tpl->tpl_vars['materia']->do_else = false;
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['materia']->value->profesor;?>
 </td>
-            <td><a href="updateview.php?id=<?php echo $_smarty_tpl->tpl_vars['materia']->value->id;?>
+            <td><a href="updateview/<?php echo $_smarty_tpl->tpl_vars['materia']->value->id;?>
+/<?php echo $_smarty_tpl->tpl_vars['materia']->value->nombre;?>
+/<?php echo $_smarty_tpl->tpl_vars['materia']->value->profesor;?>
 ">modificar</a></td>
-            <td><a href="eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['materia']->value->id;?>
+            <td><a href="eliminar/<?php echo $_smarty_tpl->tpl_vars['materia']->value->id;?>
 ">eliminar</a></td>
+            
         </tr>
     </tbody>
  
