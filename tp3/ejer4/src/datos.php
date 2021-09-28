@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/style.css">
 <?php
+function Showhome(){
 require_once('lib/smarty-3.1.39/libs/Smarty.class.php'); 
 
 $db = new PDO('mysql:host=localhost;'.
@@ -16,8 +16,6 @@ foreach ($tareas as $tarea) {
 
 }
 
-var_dump($pagos);
-
 
 $smarty = new Smarty();
 $smarty->assign('titulo',"Lista de pagos");
@@ -27,5 +25,5 @@ $smarty->assign('pagos', $pagos);
 $smarty->display('template/home.tpl');
 
 
-
+}
 
