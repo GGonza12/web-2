@@ -27,7 +27,6 @@ switch ($params[0]) {
         break;
     case 'filtro':    
     $materia = $_POST['materia'];
-    var_dump($materia);
         filtro($materia);
         break;
     case 'agregar':
@@ -39,14 +38,12 @@ switch ($params[0]) {
         eliminar($params[1]);
         break;
     case 'updateview':
-        var_dump($params[1],$params[2],$params[3]);
         UpdateView($params[1],$params[2],$params[3]);
         break;
     case 'modificar':
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $profesor = $_POST['profesor'];
-        var_dump($id,$nombre,$profesor);
         modificar($id,$nombre,$profesor);
             break;
     default: 
