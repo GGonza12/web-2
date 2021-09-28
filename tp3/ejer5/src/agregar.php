@@ -11,8 +11,10 @@ function agregar($nombre,$profesor){
     
     
     foreach ($objetos as $objeto) {
+        if ($objeto->id != $id){ 
+            break;
+        }
         $id+=1;
-        
     }
     
         $sentencia = $db->prepare("INSERT INTO materias (id,nombre, profesor) VALUES (?, ?, ?)");

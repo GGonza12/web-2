@@ -11,9 +11,12 @@ function insertar($deudor,$cuota,$capital,$fecha){
     $sentencia = $db->prepare("select * from pagos");
     $sentencia->execute();
     $tareas = $sentencia->fetchAll(PDO::FETCH_OBJ);
-    $id=1;
+    $id=0;
     
     foreach ($tareas as $tarea) {
+        if($tarea->id_deudor != $id){
+            break;
+        }
         $id+=1;
         
     }
