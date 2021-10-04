@@ -1,5 +1,5 @@
 <?php
-function Showhome(){
+function mostrar_materias($id_carrera){
 
 
 require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
@@ -11,8 +11,8 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     $db = new PDO('mysql:host=localhost;'.
     'dbname=universidad;charset=utf8', 'root' ,'');
     
-    $sentencia = $db->prepare("select * from materias");
-    $sentencia->execute();
+    $sentencia = $db->prepare("SELECT a.*, b.* FROM materias a INNER JOIN carreras b WHERE a.id_carrera=? AND b.id_carrera=?");
+    $sentencia->execute(array($id_carrera,$id_carrera));
     $objetos = $sentencia->fetchAll(PDO::FETCH_OBJ);
     $materias= [];
     
@@ -23,20 +23,14 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     }
     
     //var_dump($materias);
-    
     $smarty = new Smarty();
     
-    $smarty->assign('titulo',"Tabla de materias");
+    $smarty->assign('titulo',"Lista de materias de: ");
     
     $smarty->assign('materias', $materias);
     
-    $smarty->display('template/home.tpl');
+    $smarty->display('template/listar.tpl');
 
     
 //}
 }
-
-
-
-
-

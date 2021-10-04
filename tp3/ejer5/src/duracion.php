@@ -1,18 +1,19 @@
 <?php
-function Showhome(){
+function mostrar_duracion($duracion){
 
 
 require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
-//if (isset($_GET['nombre']) && isset($_GET['profesor'])){
-// echo "a";
-//}
-//else {
 
     $db = new PDO('mysql:host=localhost;'.
     'dbname=universidad;charset=utf8', 'root' ,'');
     
-    $sentencia = $db->prepare("select * from materias");
-    $sentencia->execute();
+    $sentencia = $db->prepare("SELECT a.*, b.*
+    FROM materias a
+    INNER JOIN carreras b
+    on a.id_carrera = b.id_carrera
+    where b.duracion_carrera<=?
+    ORDER BY b.id_carrera ASC");
+    $sentencia->execute(array($duracion));
     $objetos = $sentencia->fetchAll(PDO::FETCH_OBJ);
     $materias= [];
     
@@ -22,21 +23,13 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     
     }
     
-    //var_dump($materias);
-    
     $smarty = new Smarty();
     
-    $smarty->assign('titulo',"Tabla de materias");
+    $smarty->assign('titulo',"Lista de materias de: ");
     
     $smarty->assign('materias', $materias);
     
-    $smarty->display('template/home.tpl');
+    $smarty->display('template/listar.tpl');
 
     
-//}
 }
-
-
-
-
-
