@@ -3,10 +3,6 @@ function mostrar_materias($id_carrera){
 
 
 require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
-//if (isset($_GET['nombre']) && isset($_GET['profesor'])){
-// echo "a";
-//}
-//else {
 
     $db = new PDO('mysql:host=localhost;'.
     'dbname=universidad;charset=utf8', 'root' ,'');
@@ -22,7 +18,6 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     
     }
     
-    //var_dump($materias);
     $smarty = new Smarty();
     
     $smarty->assign('titulo',"Lista de materias de: ");
@@ -32,5 +27,4 @@ require_once('lib/smarty-3.1.39/libs/Smarty.class.php');
     $smarty->display('template/listar.tpl');
 
     
-//}
 }
