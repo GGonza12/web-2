@@ -16,10 +16,8 @@
                 <td>{$task->producto}</td>
                 <td>{$task->precio}</td>
                 <td><a href="../deleteTask/{$task->id_producto}">eliminar</a></td>
-
             </tr>
         </tbody>
-
   
 </table>
 <a href="..">Home</a>
